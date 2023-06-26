@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components'
-import { genericHeadingStyle, level1, level8 } from './Typography.style'
-import { Heading1, Heading4, Paragraph, ParagraphSmall } from './Article.style'
+import { genericHeadingStyle, level1, level8 } from '../../Typography.style'
+import {
+  Heading1,
+  Heading4,
+  Paragraph,
+  ParagraphSmall,
+} from '../article/article.style'
 
 export const Header = styled.header`
   display: flex;

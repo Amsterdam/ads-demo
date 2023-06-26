@@ -9,7 +9,7 @@ import {
   level6,
   level7,
   level8,
-} from './Typography.style'
+} from '../../Typography.style'
 
 export const HeadingAndIntroContainer = styled.div`
   grid-area: auto / 2 / auto / span 10;
@@ -61,27 +61,6 @@ export const Heading3 = styled.h1`
     margin-bottom: 24px;
   }
 `
-
-// export const Heading3New = styled.h1`
-//   break-after: avoid;
-//   break-inside: avoid;
-//   color: black;
-//   font-weight: 800;
-//   margin-block-end: 0;
-//   margin-block-start: 0;
-//   margin-inline-end: 0;
-//   margin-inline-start: 0;
-//   box-sizing: border-box;
-//   font-size: ${calculateFluidStyle(29, 33, 854, 1920)};
-//   line-height: 100%;
-//   margin-bottom: 40px;
-
-//   @media screen and (max-width: 853px) {
-//     font-size: ${calculateFluidStyle(22, 29, 320, 853)};
-//     line-height: 110%;
-//     margin-bottom: 24px;
-//   }
-// `
 
 export const Heading4 = styled.h1`
   ${genericHeadingStyle}

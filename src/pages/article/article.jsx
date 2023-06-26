@@ -1,4 +1,4 @@
-import * as Styled from './Article.style'
+import * as Styled from './article.style'
 
 const Article = () => (
   <>

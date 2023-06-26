@@ -1,4 +1,4 @@
-import * as Styled from './Homepage.style'
+import * as Styled from './homepage.style'
 import {
   themes,
   mockData,
@@ -7,8 +7,13 @@ import {
   generalList,
   quickLinks,
   moreLinks,
-} from './data'
-import { Heading1, Heading3, Heading4, ParagraphSmall } from './Article.style'
+} from '../../data'
+import {
+  Heading1,
+  Heading3,
+  Heading4,
+  ParagraphSmall,
+} from '../article/article.style'
 import logo from '/logo-gemeente-amsterdam-large.svg'
 
 const Homepage = () => {

@@ -10,6 +10,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
+export const NonDSElements = createGlobalStyle`
+  * {
+    outline: 2px solid hotpink;
+  }
+
+  [class^='amsterdam-'],
+  [class*=' amsterdam-'] {
+    outline: none;
+  }
+`
+
 export const Wrapper = styled.div`
   max-width: 1504px;
   margin: 0 auto;
