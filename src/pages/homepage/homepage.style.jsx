@@ -1,11 +1,6 @@
 import styled, { css } from 'styled-components'
+import { Heading, Paragraph } from '@amsterdam/design-system-react'
 import { genericHeadingStyle, level1, level8 } from '../../Typography.style'
-import {
-  Heading1,
-  Heading4,
-  Paragraph,
-  ParagraphSmall,
-} from '../article/article.style'
 
 export const Header = styled.header`
   display: flex;
@@ -133,7 +128,7 @@ export const HightlightCardImgContainer = styled.div`
   margin-bottom: 20px;
 `
 
-export const HighlightCardHeading = styled(Heading1)`
+export const HighlightCardHeading = styled(Heading)`
   margin-bottom: 8px;
 `
 
@@ -141,7 +136,7 @@ export const HighlightCardText = styled(Paragraph)`
   margin-bottom: 4px;
 `
 
-export const HighlightCardSmallText = styled(ParagraphSmall)`
+export const HighlightCardSmallText = styled(Paragraph)`
   margin-bottom: 4px;
 `
 
@@ -185,11 +180,11 @@ export const MediumCardImgContainer = styled.div`
   overflow: hidden;
 `
 
-export const MediumCardHeading = styled(Heading4)`
+export const MediumCardHeading = styled(Heading)`
   margin-bottom: 8px;
 `
 
-export const MediumCardText = styled(ParagraphSmall)`
+export const MediumCardText = styled(Paragraph)`
   margin-bottom: 4px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -212,11 +207,11 @@ export const CollectionCardListItem = styled.li`
   grid-area: auto / auto / auto / span 4;
 `
 
-export const CollectionCardTitle = styled(Heading4)`
+export const CollectionCardTitle = styled(Heading)`
   color: #004699;
 `
 
-export const CollectionCardText = styled(ParagraphSmall)`
+export const CollectionCardText = styled(Paragraph)`
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;

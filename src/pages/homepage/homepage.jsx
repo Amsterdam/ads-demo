@@ -1,3 +1,6 @@
+import { Heading, Link, Paragraph } from '@amsterdam/design-system-react'
+import { Email } from '@amsterdam/design-system-react-icons'
+
 import * as Styled from './homepage.style'
 import {
   themes,
@@ -8,13 +11,12 @@ import {
   quickLinks,
   moreLinks,
 } from '../../data'
-import {
-  Heading1,
-  Heading3,
-  Heading4,
-  ParagraphSmall,
-} from '../article/article.style'
 import logo from '/logo-gemeente-amsterdam-large.svg'
+
+import '@amsterdam/design-system-css/dist/paragraph/paragraph.css'
+import '@amsterdam/design-system-css/dist/heading/heading.css'
+import '@amsterdam/design-system-css/dist/link/link.css'
+import '@amsterdam/design-system-css/dist/icon/icon.css'
 
 const Homepage = () => {
   const HighlightCardData = mockData.featured[0].publications
@@ -37,33 +39,51 @@ const Homepage = () => {
         <Styled.Hero>Onderzoek en Statistiek</Styled.Hero>
       </Styled.TwelveColumn>
       <Styled.NavBlock>
-        <Heading4 style={{ marginTop: '112px', marginBottom: '12px' }}>
+        <Heading level={4} style={{ marginTop: '112px', marginBottom: '12px' }}>
           Thema’s
-        </Heading4>
+        </Heading>
         <Styled.List>
           {themes.map(({ label }) => (
             <li key={label}>
-              <Styled.Link href="/">{label}</Styled.Link>
+              <Link
+                variant="inList"
+                href="/"
+                style={{ paddingTop: '12px', paddingBottom: '12px' }}
+              >
+                {label}
+              </Link>
             </li>
           ))}
         </Styled.List>
-        <Heading4 style={{ marginTop: '56px', marginBottom: '12px' }}>
+        <Heading level={4} style={{ marginTop: '56px', marginBottom: '12px' }}>
           Snel naar
-        </Heading4>
+        </Heading>
         <Styled.List>
           {quickLinks.map((item) => (
             <li key={item}>
-              <Styled.Link href="/">{item}</Styled.Link>
+              <Link
+                variant="inList"
+                href="/"
+                style={{ paddingTop: '12px', paddingBottom: '12px' }}
+              >
+                {item}
+              </Link>
             </li>
           ))}
         </Styled.List>
-        <Heading4 style={{ marginTop: '56px', marginBottom: '12px' }}>
+        <Heading level={4} style={{ marginTop: '56px', marginBottom: '12px' }}>
           Meer feiten en cijfers
-        </Heading4>
+        </Heading>
         <Styled.List>
           {moreLinks.map((item) => (
             <li key={item}>
-              <Styled.Link href="/">{item}</Styled.Link>
+              <Link
+                variant="inList"
+                href="/"
+                style={{ paddingTop: '12px', paddingBottom: '12px' }}
+              >
+                {item}
+              </Link>
             </li>
           ))}
         </Styled.List>
@@ -76,7 +96,7 @@ const Homepage = () => {
               style={{ position: 'absolute', top: 0, width: '100%' }}
             />
           </Styled.HightlightCardImgContainer>
-          <Styled.HighlightCardSmallText>
+          <Styled.HighlightCardSmallText size="small">
             Publicatie
           </Styled.HighlightCardSmallText>
           <Styled.HighlightCardHeading>
@@ -88,7 +108,7 @@ const Homepage = () => {
         </Styled.HighlightCard>
       </Styled.EightColumn>
       <Styled.EightColumn>
-        <Heading3>Uitgelicht</Heading3>
+        <Heading level={3}>Uitgelicht</Heading>
         <Styled.MediumCardList>
           {MediumCardData.map(({ item }) => (
             <Styled.MediumCardListItem key={item.title}>
@@ -106,25 +126,35 @@ const Homepage = () => {
                     }}
                   />
                 </Styled.MediumCardImgContainer>
-                <Styled.MediumCardText>Publicatie</Styled.MediumCardText>
-                <Styled.MediumCardHeading>
+                <Styled.MediumCardText size="small">
+                  Publicatie
+                </Styled.MediumCardText>
+                <Styled.MediumCardHeading level={4}>
                   {item.title}
                 </Styled.MediumCardHeading>
-                <Styled.MediumCardText>{item.teaser}</Styled.MediumCardText>
+                <Styled.MediumCardText size="small">
+                  {item.teaser}
+                </Styled.MediumCardText>
               </Styled.MediumCard>
             </Styled.MediumCardListItem>
           ))}
         </Styled.MediumCardList>
       </Styled.EightColumn>
       <Styled.TwelveColumn style={{ marginBottom: '80px' }}>
-        <Heading1>Dossiers</Heading1>
+        <Heading style={{ marginBottom: '40px' }}>Dossiers</Heading>
         <Styled.CollectionCardList>
           {CollectionData.map((item) => (
             <Styled.CollectionCardListItem key={item.collections.title}>
-              <Styled.CollectionCardTitle style={{ marginBottom: '8px' }}>
+              <Styled.CollectionCardTitle
+                level={4}
+                style={{ marginBottom: '8px' }}
+              >
                 {item.collections.title}
               </Styled.CollectionCardTitle>
-              <Styled.CollectionCardText>
+              <Styled.CollectionCardText
+                size="small"
+                style={{ marginBottom: '40px' }}
+              >
                 {item.collections.teaser}
               </Styled.CollectionCardText>
             </Styled.CollectionCardListItem>
@@ -133,45 +163,66 @@ const Homepage = () => {
       </Styled.TwelveColumn>
       <Styled.Footer>
         <Styled.FooterItem>
-          <Heading4>Contact</Heading4>
-          <ParagraphSmall>
+          <Heading level={4} style={{ marginBottom: '40px' }}>
+            Contact
+          </Heading>
+          <Paragraph size="small" style={{ marginBottom: '40px' }}>
             Heeft u een vraag en kunt u het antwoord niet vinden op deze site?
             Neem dan contact met ons op.
-          </ParagraphSmall>
+          </Paragraph>
           <Styled.List>
             {contactList.map((item) => (
               <li key={item}>
-                <Styled.Link href="/" style={{ color: 'white' }}>
+                <Link
+                  onBackground="dark"
+                  variant="inList"
+                  href="/"
+                  style={{ paddingTop: '12px', paddingBottom: '12px' }}
+                >
                   {item}
-                </Styled.Link>
+                </Link>
               </li>
             ))}
           </Styled.List>
         </Styled.FooterItem>
         <Styled.FooterItem second>
-          <Heading4>Panels en enquêtes</Heading4>
-          <ParagraphSmall>
+          <Heading level={4} style={{ marginBottom: '40px' }}>
+            Panels en enquêtes
+          </Heading>
+          <Paragraph size="small" style={{ marginBottom: '40px' }}>
             Bent u uitgenodigd om mee te doen aan onderzoek of heeft u vragen
             over het panel of stadspaspanel?
-          </ParagraphSmall>
+          </Paragraph>
           <Styled.List>
             {panelsList.map((item) => (
               <li key={item}>
-                <Styled.Link href="/" style={{ color: 'white' }}>
+                <Link
+                  onBackground="dark"
+                  variant="inList"
+                  href="/"
+                  style={{ paddingTop: '12px', paddingBottom: '12px' }}
+                >
                   {item}
-                </Styled.Link>
+                </Link>
               </li>
             ))}
           </Styled.List>
         </Styled.FooterItem>
         <Styled.FooterItem third>
-          <Heading4>Onderzoek en Statistiek</Heading4>
+          <Heading level={4} style={{ marginBottom: '40px' }}>
+            Onderzoek en Statistiek
+          </Heading>
           <Styled.List>
             {generalList.map((item) => (
               <li key={item}>
-                <Styled.Link href="/" style={{ color: 'white' }}>
+                <Link
+                  onBackground="dark"
+                  variant="inList"
+                  href="/"
+                  style={{ paddingTop: '12px', paddingBottom: '12px' }}
+                >
                   {item}
-                </Styled.Link>
+                </Link>
               </li>
             ))}
           </Styled.List>

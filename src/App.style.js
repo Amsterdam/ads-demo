@@ -16,7 +16,9 @@ export const NonDSElements = createGlobalStyle`
   }
 
   [class^='amsterdam-'],
-  [class*=' amsterdam-'] {
+  [class*=' amsterdam-'],
+  svg,
+  path {
     outline: none;
   }
 `
