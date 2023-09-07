@@ -12,6 +12,7 @@ import {
   moreLinks,
 } from '../../data'
 import logo from '/logo-gemeente-amsterdam-large.svg'
+import { calculateFluidStyle } from '../../utils'
 
 import '@amsterdam/design-system-css/dist/paragraph/paragraph.css'
 import '@amsterdam/design-system-css/dist/heading/heading.css'
@@ -25,9 +26,11 @@ const Homepage = () => {
 
   const CollectionData = mockData.featuredCollections
 
+  console.log(calculateFluidStyle(0, 64, 320, 1440))
+
   return (
     <>
-      <Styled.Header>
+      {/* <Styled.Header>
         <Styled.HeaderLogo src={logo} />
         <div>
           <Styled.HeaderButtons>Zoek</Styled.HeaderButtons>
@@ -160,7 +163,7 @@ const Homepage = () => {
             </Styled.CollectionCardListItem>
           ))}
         </Styled.CollectionCardList>
-      </Styled.TwelveColumn>
+      </Styled.TwelveColumn> */}
       <Styled.Footer>
         <Styled.FooterItem>
           <Heading level={4} style={{ marginBottom: '40px' }}>

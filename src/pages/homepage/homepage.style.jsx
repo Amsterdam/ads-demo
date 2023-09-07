@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { Heading, Paragraph } from '@amsterdam/design-system-react'
 import { genericHeadingStyle, level1, level8 } from '../../Typography.style'
+import { gridStyle } from '../../components/Grid'
 
 export const Header = styled.header`
   display: flex;
@@ -219,47 +220,39 @@ export const CollectionCardText = styled(Paragraph)`
 `
 
 export const Footer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(1, auto);
-  column-gap: 2vw;
+  ${gridStyle}
+
   background-color: #004699;
-  padding: 40px 32px;
-  grid-area: auto / auto / auto / span 12;
-  margin-bottom: 40px;
-  color: white !important;
 
-  margin-left: -32px;
-  margin-right: -32px;
-
-  @media screen and (max-width: 853px) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-area: auto / auto / auto / span 4;
-
-    padding: 40px 16px;
-
-    margin-left: -16px;
-    margin-right: -16px;
-  }
+  padding-block: 2.5rem;
 `
 
 export const FooterItem = styled.div`
-  grid-area: auto / auto / auto / span 3;
+  grid-column: content 1 / span 3;
+  padding-block-end: 2.5rem;
 
   ${({ second }) =>
     second &&
     css`
-      grid-column-start: 5;
+      grid-column: content 5 / span 3;
+
+      @media screen and (max-width: 1000px) {
+        grid-column: content / span 3; // optie 2
+      }
     `}
 
   ${({ third }) =>
     third &&
     css`
-      grid-column-start: 9;
-    `}
+      grid-column: content 9 / span 3;
+    `} 
 
-  @media screen and (max-width: 853px) {
-    grid-area: auto / 1 / auto / span 4;
-    margin-bottom: 40px;
+  /* @media screen and (max-width: 853px) {
+    grid-column: content / span 3; // optie 1
+  } */
+
+
+  @media screen and (max-width: 1000px) {
+    grid-column: content / span 3; // optie 2
   }
 `

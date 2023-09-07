@@ -23,42 +23,42 @@ function App() {
   return (
     <>
       <Styled.GlobalStyle />
-      <Styled.Wrapper>
-        <Styled.MetadataTitleContainer className="amsterdam-meta">
-          <h1 className="amsterdam-meta">Meta</h1>
-          <label htmlFor="page" className="amsterdam-meta">
-            Choose a page:
-          </label>
+      {/* <Styled.Wrapper> */}
+      <Styled.MetadataTitleContainer className="amsterdam-meta">
+        <h1 className="amsterdam-meta">Meta</h1>
+        <label htmlFor="page" className="amsterdam-meta">
+          Choose a page:
+        </label>
 
-          <select
-            name="page"
-            id="page"
-            value={page}
-            onChange={(e) => setPage(e.target.value)}
-            className="amsterdam-meta"
-          >
-            <option value="homepage">homepage</option>
-            <option value="article">article</option>
-          </select>
+        <select
+          name="page"
+          id="page"
+          value={page}
+          onChange={(e) => setPage(e.target.value)}
+          className="amsterdam-meta"
+        >
+          <option value="homepage">homepage</option>
+          <option value="article">article</option>
+        </select>
 
-          <input
-            type="checkbox"
-            id="showds"
-            name="showds"
-            value={showNonDSElements}
-            onChange={() => setShowNonDSElements(!showNonDSElements)}
-            className="amsterdam-meta"
-          />
-          <label htmlFor="showds" className="amsterdam-meta">
-            Toon elementen die niet uit Design System komen
-          </label>
-        </Styled.MetadataTitleContainer>
-        <Styled.MetadataContainer className="amsterdam-meta">
-          <p className="amsterdam-meta">{`Screenwidth: ${screenWidth}px`}</p>
-        </Styled.MetadataContainer>
-        {showNonDSElements && <Styled.NonDSElements />}
-        {page === 'homepage' ? <Homepage /> : <Article />}
-      </Styled.Wrapper>
+        <input
+          type="checkbox"
+          id="showds"
+          name="showds"
+          value={showNonDSElements}
+          onChange={() => setShowNonDSElements(!showNonDSElements)}
+          className="amsterdam-meta"
+        />
+        <label htmlFor="showds" className="amsterdam-meta">
+          Toon elementen die niet uit Design System komen
+        </label>
+      </Styled.MetadataTitleContainer>
+      <Styled.MetadataContainer className="amsterdam-meta">
+        <p className="amsterdam-meta">{`Screenwidth: ${screenWidth}px`}</p>
+      </Styled.MetadataContainer>
+      {showNonDSElements && <Styled.NonDSElements />}
+      {page === 'homepage' ? <Homepage /> : <Article />}
+      {/* </Styled.Wrapper> */}
     </>
   )
 }
