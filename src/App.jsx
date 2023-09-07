@@ -7,6 +7,7 @@ function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [page, setPage] = useState('homepage')
   const [showNonDSElements, setShowNonDSElements] = useState(false)
+  const [grid, setGrid] = useState('optie 1')
 
   useLayoutEffect(() => {
     const getSizes = () => {
@@ -23,9 +24,10 @@ function App() {
   return (
     <>
       <Styled.GlobalStyle />
-      <Styled.Wrapper>
-        <Styled.MetadataTitleContainer className="amsterdam-meta">
-          <h1 className="amsterdam-meta">Meta</h1>
+      <Styled.MetadataTitleContainer className="amsterdam-meta">
+        <h1 className="amsterdam-meta">Meta</h1>
+
+        <div>
           <label htmlFor="page" className="amsterdam-meta">
             Choose a page:
           </label>
@@ -40,7 +42,9 @@ function App() {
             <option value="homepage">homepage</option>
             <option value="article">article</option>
           </select>
+        </div>
 
+        <div>
           <input
             type="checkbox"
             id="showds"
@@ -52,13 +56,31 @@ function App() {
           <label htmlFor="showds" className="amsterdam-meta">
             Toon elementen die niet uit Design System komen
           </label>
-        </Styled.MetadataTitleContainer>
-        <Styled.MetadataContainer className="amsterdam-meta">
-          <p className="amsterdam-meta">{`Screenwidth: ${screenWidth}px`}</p>
-        </Styled.MetadataContainer>
-        {showNonDSElements && <Styled.NonDSElements />}
-        {page === 'homepage' ? <Homepage /> : <Article />}
-      </Styled.Wrapper>
+        </div>
+
+        <div>
+          <label htmlFor="page" className="amsterdam-meta">
+            Kies een grid optie:
+          </label>
+
+          <select
+            name="page"
+            id="page"
+            value={grid}
+            onChange={(e) => setGrid(e.target.value)}
+            className="amsterdam-meta"
+          >
+            <option value="optie 1">optie 1</option>
+            <option value="optie 2">optie 2</option>
+            <option value="optie 3">optie 3</option>
+          </select>
+        </div>
+      </Styled.MetadataTitleContainer>
+      <Styled.MetadataContainer className="amsterdam-meta">
+        <p className="amsterdam-meta">{`Screenwidth: ${screenWidth}px`}</p>
+      </Styled.MetadataContainer>
+      {showNonDSElements && <Styled.NonDSElements />}
+      {page === 'homepage' ? <Homepage grid={grid} /> : <Article grid={grid} />}
     </>
   )
 }

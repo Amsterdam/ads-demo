@@ -23,23 +23,13 @@ export const NonDSElements = createGlobalStyle`
   }
 `
 
-export const Wrapper = styled.div`
+export const MetadataTitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: lightgrey;
   max-width: 1504px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(1, auto);
-  column-gap: 2vw;
-  padding: 0 32px;
-
-  @media screen and (max-width: 853px) {
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0 16px;
-  }
-`
-
-export const MetadataTitleContainer = styled.div`
-  background-color: lightgrey;
 
   grid-area: auto / auto / auto / span 12;
 
@@ -51,6 +41,8 @@ export const MetadataTitleContainer = styled.div`
 export const MetadataContainer = styled.div`
   background-color: lightgrey;
   grid-area: auto / auto / auto / span 12;
+  max-width: 1504px;
+  margin: 0 auto;
 
   @media screen and (max-width: 853px) {
     grid-area: auto / auto / auto / span 4;
