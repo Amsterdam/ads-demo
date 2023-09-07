@@ -23,21 +23,6 @@ export const NonDSElements = createGlobalStyle`
   }
 `
 
-export const Wrapper = styled.div`
-  max-width: 1504px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(1, auto);
-  column-gap: 2vw;
-  padding: 0 32px;
-
-  @media screen and (max-width: 853px) {
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0 16px;
-  }
-`
-
 export const MetadataTitleContainer = styled.div`
   display: flex;
   flex-direction: column;

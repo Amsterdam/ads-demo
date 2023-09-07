@@ -24,7 +24,6 @@ function App() {
   return (
     <>
       <Styled.GlobalStyle />
-      {/* <Styled.Wrapper> */}
       <Styled.MetadataTitleContainer className="amsterdam-meta">
         <h1 className="amsterdam-meta">Meta</h1>
 
@@ -82,7 +81,6 @@ function App() {
       </Styled.MetadataContainer>
       {showNonDSElements && <Styled.NonDSElements />}
       {page === 'homepage' ? <Homepage grid={grid} /> : <Article grid={grid} />}
-      {/* </Styled.Wrapper> */}
     </>
   )
 }
