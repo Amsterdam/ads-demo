@@ -11,8 +11,8 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@amsterdam/design-system-assets": "^0.1.1",
     "@amsterdam/design-system-css": "^0.1.3",
-    "@amsterdam/design-system-font": "^0.1.2",
     "@amsterdam/design-system-react": "^0.1.3",
     "@amsterdam/design-system-react-icons": "^0.1.3",
     "@amsterdam/design-system-tokens": "^0.1.2",
