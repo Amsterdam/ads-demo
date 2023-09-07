@@ -39,6 +39,9 @@ export const Wrapper = styled.div`
 `
 
 export const MetadataTitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   background-color: lightgrey;
 
   grid-area: auto / auto / auto / span 12;

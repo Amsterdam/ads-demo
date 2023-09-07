@@ -1,47 +1,40 @@
 import styled, { css } from 'styled-components'
+import { calculateFluidStyle } from '../utils'
 
 const maxWidthOption1 = 1504
 const maxWidthOption2 = 1568
 const maxWidthOption3 = 1632
 
-const breakpointOption1 = 854
-const breakpointsOption2 = [600, 1000]
-const breakpointsOption3 = [600, 1000]
+export const breakpointOption1 = 854
+export const breakpointsOption2 = [744, 1312]
+export const breakpointsOption3 = [744, 1120]
 
-const columnGapOption1 = css`clamp(
-  0.5rem,
-  calc(0.5rem + 0.0142857143 * (100vw - 20rem)),
-  1.5rem
-)`
+export const columnGapOption1 = css`
+  ${calculateFluidStyle(8, 24, 320, 1440)}
+`
 
-const columnGapOption2 = css`clamp(
-  1rem,
-  1rem + 1 * (100vw - 20rem) / 70,
-  2rem
-)`
+export const columnGapOption2 = css`
+  ${calculateFluidStyle(16, 32, 320, 1440)}
+`
 
-const columnGapOption3 = css`clamp(
-  1rem,
-  1rem + 1.5 * (100vw - 20rem) / 70,
-  2rem
-)`
+export const columnGapOption3 = css`
+  ${calculateFluidStyle(16, 32, 320, 1440)}
+`
 
-const extraMarginSpacingOption1 = css`clamp(0.25rem, 0.25rem + 0.25 * (100vw - 20rem) / 70, 0.5rem)`
+const extraMarginSpacingOption1 = css`
+  ${calculateFluidStyle(4, 8, 320, 1440)}
+`
 
-const extraMarginSpacingOption2 = css`clamp(
-  1rem,
-  1rem + 1 * (100vw - 20rem) / 70,
-  2rem
-)`
+const extraMarginSpacingOption2 = css`
+  ${calculateFluidStyle(16, 32, 320, 1440)}
+`
 
-const extraMarginSpacingOption3 = css`clamp(
-  0rem,
-  0rem + 4 * (100vw - 20rem) / 70,
-  4rem
-)`
+const extraMarginSpacingOption3 = css`
+  ${calculateFluidStyle(0, 64, 320, 1440)}
+`
 
 const mediaQueriesOption1 = css`
-  @media screen and (min-width: 854px) {
+  @media screen and (min-width: ${breakpointOption1}px) {
     grid-template-columns:
       [bleed-start] ${extraMarginSpacingOption1}
       [bleed-end] repeat(12, [content] 1fr)
@@ -51,7 +44,7 @@ const mediaQueriesOption1 = css`
 `
 
 const mediaQueriesOption2 = css`
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: ${breakpointsOption2[0]}px) {
     grid-template-columns:
       [bleed-start] ${extraMarginSpacingOption2}
       [bleed-end] repeat(8, [content] 1fr)
@@ -59,7 +52,7 @@ const mediaQueriesOption2 = css`
       [bleed-end];
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: ${breakpointsOption2[1]}px) {
     grid-template-columns:
       [bleed-start] ${extraMarginSpacingOption2}
       [bleed-end] repeat(12, [content] 1fr)
@@ -69,7 +62,7 @@ const mediaQueriesOption2 = css`
 `
 
 const mediaQueriesOption3 = css`
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: ${breakpointsOption3[0]}px) {
     grid-template-columns:
       [bleed-start] ${extraMarginSpacingOption3}
       [bleed-end] repeat(8, [content] 1fr)
@@ -77,7 +70,7 @@ const mediaQueriesOption3 = css`
       [bleed-end];
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: ${breakpointsOption3[1]}px) {
     grid-template-columns:
       [bleed-start] ${extraMarginSpacingOption3}
       [bleed-end] repeat(12, [content] 1fr)
@@ -87,20 +80,93 @@ const mediaQueriesOption3 = css`
 `
 
 export const gridStyle = css`
-  column-gap: ${columnGapOption3};
+  column-gap: ${({ gridOption }) =>
+    gridOption === 'optie 1'
+      ? columnGapOption1
+      : gridOption === 'optie 2'
+      ? columnGapOption2
+      : columnGapOption3};
   display: grid;
   grid-template-columns: /* the margin size is the gutter size + extra space, that's what the variable after bleed-start does */
-    [bleed-start] ${extraMarginSpacingOption3}
+    [bleed-start] ${({ gridOption }) =>
+      gridOption === 'optie 1'
+        ? extraMarginSpacingOption1
+        : gridOption === 'optie 2'
+        ? extraMarginSpacingOption2
+        : extraMarginSpacingOption3}
     [bleed-end] repeat(4, [content] 1fr)
-    [content bleed-start] ${extraMarginSpacingOption3}
+    [content bleed-start] ${({ gridOption }) =>
+      gridOption === 'optie 1'
+        ? extraMarginSpacingOption1
+        : gridOption === 'optie 2'
+        ? extraMarginSpacingOption2
+        : extraMarginSpacingOption3}
     [bleed-end];
-  max-width: ${maxWidthOption3}px;
+  max-width: ${({ gridOption }) =>
+    gridOption === 'optie 1'
+      ? maxWidthOption1
+      : gridOption === 'optie 2'
+      ? maxWidthOption2
+      : maxWidthOption3}px;
   margin: 0 auto; /* If we make all grids completely modular, without a max-width wrapper, we could use this to center everything */
 
-  ${mediaQueriesOption3}
+  ${({ gridOption }) =>
+    gridOption === 'optie 1'
+      ? mediaQueriesOption1
+      : gridOption === 'optie 2'
+      ? mediaQueriesOption2
+      : mediaQueriesOption3}
+`
+
+const gridCellMediaQueriesOption1 = css`
+  @media screen and (min-width: ${breakpointOption1}px) {
+    grid-column-start: ${({ subgrid }) => (subgrid ? '' : 'content')}
+      ${({ start }) => start?.large || 'auto'};
+    grid-column-end: span ${({ span }) => span.large || 12};
+  }
+`
+
+const gridCellMediaQueriesOption2 = css`
+  @media screen and (min-width: ${breakpointsOption2[0]}px) {
+    grid-column-start: ${({ subgrid }) => (subgrid ? '' : 'content')}
+      ${({ start }) => start?.medium || 'auto'};
+    grid-column-end: span ${({ span }) => span.medium || 8};
+  }
+
+  @media screen and (min-width: ${breakpointsOption2[1]}px) {
+    grid-column-start: ${({ subgrid }) => (subgrid ? '' : 'content')}
+      ${({ start }) => start?.large || 'auto'};
+    grid-column-end: span ${({ span }) => span.large || 12};
+  }
+`
+
+const gridCellMediaQueriesOption3 = css`
+  @media screen and (min-width: ${breakpointsOption3[0]}px) {
+    grid-column-start: ${({ subgrid }) => (subgrid ? '' : 'content')}
+      ${({ start }) => start?.medium || 'auto'};
+    grid-column-end: span ${({ span }) => span.medium || 8};
+  }
+
+  @media screen and (min-width: ${breakpointsOption3[1]}px) {
+    grid-column-start: ${({ subgrid }) => (subgrid ? '' : 'content')}
+      ${({ start }) => start?.large || 'auto'};
+    grid-column-end: span ${({ span }) => span.large || 12};
+  }
+`
+
+export const Grid = styled.div`
+  ${gridStyle}
 `
 
 export const GridCell = styled.div`
-  grid-column-start: 1;
-  grid-column-end: span 12;
+  grid-column-start: ${({ subgrid }) => (subgrid ? '' : 'content')}
+    ${({ start }) => start?.small || 'auto'};
+  grid-column-end: span ${({ span }) => span.small || 4};
+
+  ${({ gridOption }) =>
+    gridOption === 'optie 1'
+      ? gridCellMediaQueriesOption1
+      : gridOption === 'optie 2'
+      ? gridCellMediaQueriesOption2
+      : gridCellMediaQueriesOption3}
 `
