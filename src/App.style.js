@@ -43,6 +43,8 @@ export const MetadataTitleContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   background-color: lightgrey;
+  max-width: 1504px;
+  margin: 0 auto;
 
   grid-area: auto / auto / auto / span 12;
 
@@ -54,6 +56,8 @@ export const MetadataTitleContainer = styled.div`
 export const MetadataContainer = styled.div`
   background-color: lightgrey;
   grid-area: auto / auto / auto / span 12;
+  max-width: 1504px;
+  margin: 0 auto;
 
   @media screen and (max-width: 853px) {
     grid-area: auto / auto / auto / span 4;
