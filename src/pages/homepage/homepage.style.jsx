@@ -10,6 +10,8 @@ import {
   breakpointOption1,
   columnGapOption1,
   columnGapOption2,
+  breakpointsOption4,
+  columnGapOption4,
 } from '../../components/Grid'
 
 export const Hero = styled.h1`
@@ -24,7 +26,9 @@ export const Hero = styled.h1`
         ? breakpointOption1
         : gridOption === 'optie 2'
         ? breakpointsOption2[1]
-        : breakpointsOption3[1]}px) {
+        : gridOption === 'optie 3'
+        ? breakpointsOption3[1]
+        : breakpointsOption4[1]}px) {
     display: block;
   }
 `
@@ -37,7 +41,9 @@ export const NavBlock = styled(GridCell)`
         ? breakpointOption1
         : gridOption === 'optie 2'
         ? breakpointsOption2[1]
-        : breakpointsOption3[1]}px) {
+        : gridOption === 'optie 3'
+        ? breakpointsOption3[1]
+        : breakpointsOption4[1]}px) {
     display: block;
   }
 `
@@ -129,6 +135,19 @@ const mediumCardListSubgridOption3 = css`
   }
 `
 
+const mediumCardListSubgridOption4 = css`
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: ${columnGapOption4};
+
+  @media screen and (min-width: ${breakpointsOption4[0]}px) {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  @media screen and (min-width: ${breakpointsOption4[1]}px) {
+    grid-template-columns: repeat(8, 1fr);
+  }
+`
+
 export const MediumCardList = styled(List)`
   display: grid;
   ${({ gridOption }) =>
@@ -136,7 +155,9 @@ export const MediumCardList = styled(List)`
       ? mediumCardListSubgridOption1
       : gridOption === 'optie 2'
       ? mediumCardListSubgridOption2
-      : mediumCardListSubgridOption3}
+      : gridOption === 'optie 3'
+      ? mediumCardListSubgridOption3
+      : mediumCardListSubgridOption4}
 `
 
 export const MediumCardListItem = styled.li`
@@ -150,7 +171,9 @@ export const MediumCardListItem = styled.li`
           ? breakpointOption1
           : gridOption === 'optie 2'
           ? breakpointsOption2[1]
-          : breakpointsOption3[1]}px) {
+          : gridOption === 'optie 3'
+          ? breakpointsOption3[1]
+          : breakpointsOption4[1]}px) {
       padding-top: 80px;
     }
   }
@@ -220,6 +243,19 @@ const collectionSubgridOption3 = css`
   }
 `
 
+const collectionSubgridOption4 = css`
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: ${columnGapOption4};
+
+  @media screen and (min-width: ${breakpointsOption4[0]}px) {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  @media screen and (min-width: ${breakpointsOption4[1]}px) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+`
+
 export const CollectionCardList = styled.div`
   display: grid;
 
@@ -228,7 +264,9 @@ export const CollectionCardList = styled.div`
       ? collectionSubgridOption1
       : gridOption === 'optie 2'
       ? collectionSubgridOption2
-      : collectionSubgridOption3}
+      : gridOption === 'optie 3'
+      ? collectionSubgridOption3
+      : collectionSubgridOption4}
 `
 
 export const CollectionCardTitle = styled(Heading)`

@@ -27,7 +27,7 @@ const Footer = ({ grid }) => (
     <FooterItem
       gridOption={grid}
       start={{ small: 1, medium: 1, large: 1 }}
-      span={{ small: 3, medium: 3, large: 3 }}
+      span={{ small: 4, medium: 4, large: 4 }}
     >
       <Heading level={4} style={{ marginBottom: '40px' }}>
         Contact
@@ -54,7 +54,7 @@ const Footer = ({ grid }) => (
     <FooterItem
       gridOption={grid}
       start={{ small: 1, medium: 5, large: 5 }}
-      span={{ small: 3, medium: 3, large: 3 }}
+      span={{ small: 4, medium: 4, large: 4 }}
     >
       <Heading level={4} style={{ marginBottom: '40px' }}>
         Panels en enquêtes
@@ -81,7 +81,7 @@ const Footer = ({ grid }) => (
     <FooterItem
       gridOption={grid}
       start={{ small: 1, medium: 1, large: 9 }}
-      span={{ small: 3, medium: 3, large: 3 }}
+      span={{ small: 4, medium: 4, large: 4 }}
     >
       <Heading level={4} style={{ marginBottom: '40px' }}>
         Onderzoek en Statistiek

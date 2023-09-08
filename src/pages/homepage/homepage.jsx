@@ -33,7 +33,7 @@ const Homepage = ({ grid }) => {
         <Styled.NavBlock
           gridOption={grid}
           start={{ small: 1, medium: 1, large: 1 }}
-          span={{ small: 4, medium: 4, large: 4 }}
+          span={{ small: 4, medium: 4, large: 3 }}
         >
           <Heading
             level={4}
@@ -95,8 +95,8 @@ const Homepage = ({ grid }) => {
         </Styled.NavBlock>
         <GridCell
           gridOption={grid}
-          start={{ small: 1, medium: 1, large: 6 }}
-          span={{ small: 4, medium: 8, large: 7 }}
+          start={{ small: 1, medium: 1, large: 5 }}
+          span={{ small: 4, medium: 8, large: 8 }}
         >
           <Styled.HighlightCard style={{ marginBottom: '120px' }}>
             <Styled.HightlightCardImgContainer>
