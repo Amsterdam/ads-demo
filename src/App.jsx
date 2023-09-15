@@ -74,6 +74,7 @@ function App() {
             <option value="optie 2">optie 2</option>
             <option value="optie 3">optie 3</option>
             <option value="optie 4">optie 4</option>
+            <option value="optie 5">optie 5</option>
           </select>
         </div>
       </Styled.MetadataTitleContainer>
