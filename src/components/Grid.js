@@ -5,7 +5,7 @@ const maxWidthOption1 = 1504
 const maxWidthOption2 = 1568
 const maxWidthOption3 = 1632
 const maxWidthOption4 = 1632
-const maxWidthOption5 = 1584
+const maxWidthOption5 = 1600
 
 export const breakpointOption1 = 854
 export const breakpointsOption2 = [744, 1312]
@@ -30,7 +30,7 @@ export const columnGapOption4 = css`
 `
 
 export const columnGapOption5 = css`
-  ${calculateFluidStyle(16, 48, 320, 1440)}
+  ${calculateFluidStyle(16, 56, 320, 1600)}
 `
 
 const extraMarginSpacingOption1 = css`
@@ -50,7 +50,7 @@ const extraMarginSpacingOption4 = css`
 `
 
 const extraMarginSpacingOption5 = css`
-  ${calculateFluidStyle(8, 24, 320, 1440)}
+  ${calculateFluidStyle(8, 28, 320, 1600)}
 `
 
 const mediaQueriesOption1 = css`
