@@ -59,7 +59,7 @@ Error generating stack: `+l.message+`
       ${l}rem,
       ${l}rem + ${o-l} * (100vw - ${a}rem) / ${s-a},
       ${o}rem
-    )`},Rw=1504,Lw=1568,Tw=1632,Aw=1632,Iw=1584,Er=854,Pt=[744,1312],jt=[744,1120],bt=[567,1120],St=[576,1088],Zs=H`
+    )`},Rw=1504,Lw=1568,Tw=1632,Aw=1632,Iw=1600,Er=854,Pt=[744,1312],jt=[744,1120],bt=[567,1120],St=[576,1088],Zs=H`
   ${oe(8,24,320,1440)}
 `,qs=H`
   ${oe(16,32,320,1440)}
@@ -68,7 +68,7 @@ Error generating stack: `+l.message+`
 `,eu=H`
   ${oe(16,48,320,1440)}
 `,tu=H`
-  ${oe(16,48,320,1440)}
+  ${oe(16,56,320,1600)}
 `,kl=H`
   ${oe(4,8,320,1440)}
 `,Wr=H`
@@ -78,7 +78,7 @@ Error generating stack: `+l.message+`
 `,Gr=H`
   ${oe(8,48,320,1440)}
 `,Yr=H`
-  ${oe(8,24,320,1440)}
+  ${oe(8,28,320,1600)}
 `,Mw=H`
   @media screen and (min-width: ${Er}px) {
     grid-template-columns:
