@@ -1,6 +1,7 @@
 import { useLayoutEffect, useState } from 'react'
 import Article from './pages/article/article'
 import Homepage from './pages/homepage/homepage'
+import Testpage from './pages/testpage/testpage'
 import * as Styled from './App.style'
 
 function App() {
