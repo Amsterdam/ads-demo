@@ -41,6 +41,7 @@ function App() {
           >
             <option value="homepage">homepage</option>
             <option value="article">article</option>
+            <option value="testpage">testpage</option>
           </select>
         </div>
 
