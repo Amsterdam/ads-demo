@@ -1,6 +1,6 @@
 import { Heading, Link } from '@amsterdam/design-system-react'
 
-import * as Styled from './homepage.style'
+import * as Styled from './testpage.style'
 import { themes, mockData, quickLinks, moreLinks } from '../../data'
 
 import { Grid, GridCell } from '../../components/Grid'
