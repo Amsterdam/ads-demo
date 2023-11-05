@@ -30,73 +30,10 @@ const Testpage2 = ({ grid }) => {
         >
           <Styled.Hero gridOption={grid}>Project Management</Styled.Hero>
         </GridCell>
-        <Styled.NavBlock
-          gridOption={grid}
-          start={{ small: 1, medium: 1, large: 1 }}
-          span={{ small: 4, medium: 4, large: 3 }}
-        >
-          <Heading
-            level={4}
-            style={{ marginTop: '112px', marginBottom: '12px' }}
-          >
-            Thema’s
-          </Heading>
-          <Styled.List>
-            {themes.map(({ label }) => (
-              <li key={label}>
-                <Link
-                  variant="inList"
-                  href="/"
-                  style={{ paddingTop: '12px', paddingBottom: '12px' }}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </Styled.List>
-          <Heading
-            level={4}
-            style={{ marginTop: '56px', marginBottom: '12px' }}
-          >
-            Snel naar
-          </Heading>
-          <Styled.List>
-            {quickLinks.map((item) => (
-              <li key={item}>
-                <Link
-                  variant="inList"
-                  href="/"
-                  style={{ paddingTop: '12px', paddingBottom: '12px' }}
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
-          </Styled.List>
-          <Heading
-            level={4}
-            style={{ marginTop: '56px', marginBottom: '12px' }}
-          >
-            Meer feiten en cijfers
-          </Heading>
-          <Styled.List>
-            {moreLinks.map((item) => (
-              <li key={item}>
-                <Link
-                  variant="inList"
-                  href="/"
-                  style={{ paddingTop: '12px', paddingBottom: '12px' }}
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
-          </Styled.List>
-        </Styled.NavBlock>
         <GridCell
           gridOption={grid}
-          start={{ small: 1, medium: 1, large: 5 }}
-          span={{ small: 4, medium: 8, large: 8 }}
+          start={{ small: 1, medium: 1, large: 1 }}
+          span={{ small: 4, medium: 8, large: 12 }}
         >
           <Styled.HighlightCard style={{ marginBottom: '120px' }}>
             <Styled.HightlightCardImgContainer>
@@ -137,9 +74,9 @@ const Testpage2 = ({ grid }) => {
                       }}
                     />
                   </Styled.MediumCardImgContainer>
-                  <Styled.MediumCardText size="small">
+                  {/* <Styled.MediumCardText size="small">
                     Publicatie
-                  </Styled.MediumCardText>
+                  </Styled.MediumCardText> */}
                   <Styled.MediumCardHeading level={4}>
                     {item.title}
                   </Styled.MediumCardHeading>

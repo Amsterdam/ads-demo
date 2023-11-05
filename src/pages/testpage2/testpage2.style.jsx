@@ -197,7 +197,7 @@ export const MediumCardListItem = styled.li`
           : gridOption === 'optie 4'
           ? breakpointsOption4[1]
           : breakpointsOption5[1]}px) {
-      padding-top: 80px;
+      padding-top: 0px;
     }
   }
 `
