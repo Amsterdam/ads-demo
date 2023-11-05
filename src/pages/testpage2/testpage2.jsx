@@ -35,7 +35,7 @@ const Testpage2 = ({ grid }) => {
           start={{ small: 1, medium: 1, large: 1 }}
           span={{ small: 4, medium: 8, large: 12 }}
         >
-          <Styled.HighlightCard style={{ marginBottom: '120px' }}>
+          <Styled.HighlightCard style={{ marginBottom: '40px' }}>
             <Styled.HightlightCardImgContainer>
               <img
                 src="https://cms.onderzoek-en-statistiek.nl/uploads/rt_11875_dappermarkt_034_25sep2014_e_v_eis_8543a8dd86.jpg"
@@ -55,9 +55,9 @@ const Testpage2 = ({ grid }) => {
           <Heading level={3} style={{ marginBottom: 40 }}>
             Uitgelicht
           </Heading>
-          <Styled.MediumCardList gridOption={grid}>
+          <Styled.MediumCardList gridOption={grid}          >
             {MediumCardData.map(({ item }) => (
-              <Styled.MediumCardListItem key={item.title} gridOption={grid}>
+              <Styled.MediumCardListItem key={item.title} gridOption={grid}              >
                 <Styled.MediumCard>
                   <Styled.MediumCardImgContainer
                     style={{ marginBottom: '20px' }}
@@ -87,6 +87,46 @@ const Testpage2 = ({ grid }) => {
               </Styled.MediumCardListItem>
             ))}
           </Styled.MediumCardList>
+          <hr />
+          <GridCell
+          gridOption={grid}
+          start={{ small: 4, medium: 4, large: 4 }}
+          span={{ small: 4, medium: 8, large: 12 }}
+          style={{ marginBottom: '80px' }}
+          >
+            <Styled.MediumCardList>
+            {MediumCardData.map(({ item }) => (
+              <Styled.MediumCardListItem key={item.title} >
+                <Styled.MediumCard>
+                  <Styled.MediumCardImgContainer
+                    style={{ marginBottom: '20px' }}
+                  >
+                    <img
+                      src={`https://cms.onderzoek-en-statistiek.nl${item.rectangularImage.url}`}
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'grey',
+                        objectFit: 'cover',
+                      }}
+                    />
+                  </Styled.MediumCardImgContainer>
+                  {/* <Styled.MediumCardText size="small">
+                    Publicatie
+                  </Styled.MediumCardText> */}
+                  <Styled.MediumCardHeading level={6}>
+                    {item.title}
+                  </Styled.MediumCardHeading>
+                  <Styled.MediumCardText size="small">
+                    {item.teaser}
+                  </Styled.MediumCardText>
+                </Styled.MediumCard>
+              </Styled.MediumCardListItem>
+            ))}
+            </Styled.MediumCardList>
+          </GridCell>
         </GridCell>
         <GridCell
           gridOption={grid}
