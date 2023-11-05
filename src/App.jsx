@@ -86,9 +86,9 @@ function App() {
         <p className="amsterdam-meta">{`Screenwidth: ${screenWidth}px`}</p>
       </Styled.MetadataContainer>
       {showNonDSElements && <Styled.NonDSElements />}
-      {page === 'homepage' ? <Homepage grid={grid} /> : <Article grid={grid} />}
-      {page === 'testpage' ? <Testpage grid={grid} /> : <Article grid={grid} />}
-      {page === 'testpage2' ? <Testpage2 grid={grid} /> : <Article grid={grid} />}
+      {page === 'homepage' ? <Homepage grid={grid} /> : <Testpage2 grid={grid} />}
+      {/* {page === 'testpage' ? <Testpage grid={grid} /> : <Article grid={grid} />}
+      {page === 'testpage2' ? <Testpage2 grid={grid} /> : <Article grid={grid} />} */}
     </>
   )
 }

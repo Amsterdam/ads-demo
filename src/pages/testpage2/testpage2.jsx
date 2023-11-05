@@ -28,7 +28,7 @@ const Testpage2 = ({ grid }) => {
           start={{ small: 1, medium: 1, large: 1 }}
           span={{ small: 4, medium: 8, large: 12 }}
         >
-          <Styled.Hero gridOption={grid}>Onderzoek en Statistiek</Styled.Hero>
+          <Styled.Hero gridOption={grid}>Project Management</Styled.Hero>
         </GridCell>
         <Styled.NavBlock
           gridOption={grid}
