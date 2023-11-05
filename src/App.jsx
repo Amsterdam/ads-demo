@@ -1,6 +1,7 @@
 import { useLayoutEffect, useState } from 'react'
 import Article from './pages/article/article'
 import Homepage from './pages/homepage/homepage'
+import Testpage from './pages/testpage/testpage'
 import Testpage2 from './pages/testpage2/testpage2'
 import * as Styled from './App.style'
 
@@ -42,6 +43,7 @@ function App() {
           >
             <option value="homepage">homepage</option>
             <option value="article">article</option>
+            <option value="testpage">testpage</option>
             <option value="testpage">testpage2</option>
           </select>
         </div>
@@ -85,6 +87,8 @@ function App() {
       </Styled.MetadataContainer>
       {showNonDSElements && <Styled.NonDSElements />}
       {page === 'homepage' ? <Homepage grid={grid} /> : <Article grid={grid} />}
+      {page === 'testpage' ? <Testpage grid={grid} /> : <Article grid={grid} />}
+      {page === 'testpage2' ? <Testpage2 grid={grid} /> : <Article grid={grid} />}
     </>
   )
 }
