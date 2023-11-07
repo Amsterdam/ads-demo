@@ -30,6 +30,7 @@ const Testpage2 = ({ grid }) => {
         >
           <Styled.Hero gridOption={grid}>Project Management</Styled.Hero>
         </GridCell>
+
         <GridCell
           gridOption={grid}
           start={{ small: 1, medium: 1, large: 1 }}
@@ -52,9 +53,9 @@ const Testpage2 = ({ grid }) => {
               {HighlightCardData.teaser}
             </Styled.HighlightCardText>
           </Styled.HighlightCard>
-          <Heading level={3} style={{ marginBottom: 40 }}>
+          {/* <Heading level={3} style={{ marginBottom: 40 }}>
             Uitgelicht
-          </Heading>
+          </Heading> */}
           <Styled.MediumCardList gridOption={grid}          >
             {MediumCardData.map(({ item }) => (
               <Styled.MediumCardListItem key={item.title} gridOption={grid}              >
@@ -92,9 +93,9 @@ const Testpage2 = ({ grid }) => {
           gridOption={grid}
           start={{ small: 4, medium: 4, large: 4 }}
           span={{ small: 4, medium: 8, large: 12 }}
-          style={{ marginBottom: '80px' }}
+          style={{ marginBottom: '20px' }}
           >
-            <Styled.MediumCardList>
+            {/* <Styled.MediumCardList>
             {MediumCardData.map(({ item }) => (
               <Styled.MediumCardListItem key={item.title} >
                 <Styled.MediumCard>
@@ -113,9 +114,7 @@ const Testpage2 = ({ grid }) => {
                       }}
                     />
                   </Styled.MediumCardImgContainer>
-                  {/* <Styled.MediumCardText size="small">
-                    Publicatie
-                  </Styled.MediumCardText> */}
+
                   <Styled.MediumCardHeading level={6}>
                     {item.title}
                   </Styled.MediumCardHeading>
@@ -125,21 +124,54 @@ const Testpage2 = ({ grid }) => {
                 </Styled.MediumCard>
               </Styled.MediumCardListItem>
             ))}
-            </Styled.MediumCardList>
+            </Styled.MediumCardList> */}
           </GridCell>
         </GridCell>
+
         <GridCell
           gridOption={grid}
           start={{ small: 1, medium: 1, large: 1 }}
           span={{ small: 4, medium: 8, large: 12 }}
           style={{ marginBottom: '80px' }}
         >
+          <GridCell
+            gridOption={grid}
+            start={{ small: 4, medium: 4, large: 4 }}
+            span={{ small: 2, medium: 4, large: 8 }}
+          >
+        <Styled.NavBlock
+          gridOption={grid}
+          start={{ small: 1, medium: 1, large: 1 }}
+          span={{ small: 4, medium: 4, large: 3 }}
+        >
+          <Heading
+            level={4}
+            style={{ marginTop: '112px', marginBottom: '12px' }}
+          >
+            Thema’s
+          </Heading>
+          <Styled.List>
+            {themes.map(({ label }) => (
+              <li key={label}>
+                <Link
+                  variant="inList"
+                  href="/"
+                  style={{ paddingTop: '12px', paddingBottom: '12px' }}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </Styled.List>
+        </Styled.NavBlock>
+
+
           <Heading style={{ marginBottom: '40px' }}>Dossiers</Heading>
           <Styled.CollectionCardList gridOption={grid}>
             {CollectionData.map((item) => (
               <GridCell
                 gridOption={grid}
-                span={{ small: 4, medium: 4, large: 4 }}
+                span={{ small: 8, medium: 4, large: 4 }}
                 subgrid
                 key={item.collections.title}
               >
@@ -158,6 +190,7 @@ const Testpage2 = ({ grid }) => {
               </GridCell>
             ))}
           </Styled.CollectionCardList>
+          </GridCell>
         </GridCell>
       </Grid>
       <Footer grid={grid} />
